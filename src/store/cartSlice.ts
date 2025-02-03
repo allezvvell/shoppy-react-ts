@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { CartType } from '@constants/cart';
 import { getLocalState } from '@utils/helper';
 
 const initialState = {

@@ -4,7 +4,7 @@ import useDarkMode from '@hooks/state/useDarkMode';
 
 const NotFound = () => {
   const navigate = useNavigate();
-  const darkMode = useDarkMode();
+  const _darkMode = useDarkMode();
   const onClickButton = () => navigate('/', { replace: true });
 
   return (
