@@ -1,4 +1,4 @@
-import { LocalKey, LocalValue } from '@constants/localStorage';
+import { LocalKey, LocalValue, LOCAL_KEYS } from '@constants/localStorage';
 
 export const getLocalState = <K extends LocalKey>(
   name: K
@@ -12,4 +12,11 @@ export const setLocalState = <K extends LocalKey>(
   value: LocalValue<K>
 ) => {
   localStorage.setItem(name, JSON.stringify(value));
+};
+
+export const getLocalTheme = (): boolean => {
+  const dark = getLocalState(LOCAL_KEYS.DARK_MODE);
+  const isDark = dark !== null ? dark : true;
+  if (isDark) document.documentElement.classList.add('dark');
+  return isDark;
 };

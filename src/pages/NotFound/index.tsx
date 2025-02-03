@@ -1,11 +1,15 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router';
-import useDarkMode from '@hooks/state/useDarkMode';
+import { getLocalTheme } from '@utils/helper';
 
 const NotFound = () => {
   const navigate = useNavigate();
-  const _darkMode = useDarkMode();
   const onClickButton = () => navigate('/', { replace: true });
+
+  useEffect(() => {
+    getLocalTheme();
+  }, []);
 
   return (
     <StyledNotFound>
