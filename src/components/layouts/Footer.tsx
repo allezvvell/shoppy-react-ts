@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 import { FaFacebookF, FaInstagram, FaGithub } from 'react-icons/fa';
+import americanImg from '@assets/img/svg/americanExpress.svg';
+import dinersImg from '@assets/img/svg/dinersClub.svg';
+import discoverImg from '@assets/img/svg/discover.svg';
+import masterImg from '@assets/img/svg/master.svg';
+import paypalImg from '@assets/img/svg/paypal.svg';
+import visaImg from '@assets/img/svg/visa.svg';
 
 const CARDS = [
-  'americanExpress',
-  'dinersClub',
-  'discover',
-  'master',
-  'paypal',
-  'visa',
+  { name: 'americanExpress', img: americanImg },
+  { name: 'dinersClub', img: dinersImg },
+  { name: 'discover', img: discoverImg },
+  { name: 'master', img: masterImg },
+  { name: 'paypal', img: paypalImg },
+  { name: 'visa', img: visaImg },
 ];
 
 const SNS = [
@@ -28,8 +34,8 @@ const Footer = () => {
   return (
     <StyledFooter>
       <CardList>
-        {CARDS.map((c) => (
-          <img key={c} src={`src/assets/img/svg/${c}.svg`} title={c} />
+        {CARDS.map(({ name, img }) => (
+          <img key={name} src={`src/assets/img/svg/${img}.svg`} title={name} />
         ))}
       </CardList>
       <SocialList>
