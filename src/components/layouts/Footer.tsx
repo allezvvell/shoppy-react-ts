@@ -35,7 +35,7 @@ const Footer = () => {
     <StyledFooter>
       <CardList>
         {CARDS.map(({ name, img }) => (
-          <img key={name} src={`src/assets/img/svg/${img}.svg`} title={name} />
+          <img key={name} src={img} title={name} />
         ))}
       </CardList>
       <SocialList>
